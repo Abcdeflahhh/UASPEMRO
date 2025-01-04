@@ -14,21 +14,23 @@ DOSEN PENGAMPU : Agung Nugroho, S.Kom., M.Kom.
  
 ![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/b4c7185e51c5fabb70c80fe6a282a6c0386b8a15/Image/class%20data.jpg)
 
-Deskripsi: Kelas Data digunakan untuk menyimpan informasi tentang seorang mahasiswa, termasuk:
+Deskripsi: Class Data digunakan untuk menyimpan informasi tentang mahasiswa, termasuk nama, NIM (Nomor Induk Mahasiswa), dan nilai UAS.
+
+Metode __init__: Ini adalah konstruktor yang dipanggil saat objek dari class Data dibuat. Ia menerima tiga parameter:
 
 nama: Nama mahasiswa.
 
 nim: Nomor Induk Mahasiswa.
 
-nilai_uas: Nilai Ujian Akhir Semester.
+nilai_uas: Nilai UAS yang diperoleh mahasiswa.
 
-Metode __init__: Ini adalah konstruktor yang dipanggil saat objek dari kelas ini dibuat. Ia menerima tiga parameter (nama, nim, dan nilai_uas) dan menyimpannya sebagai atribut objek.
+Atribut: Atribut self.nama, self.nim, dan self.nilai_uas menyimpan nilai yang diterima dari parameter.
 
 - Class " View " 
 
 ![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/804b9c41bc554e0ff189d6b493c5b034950ff675/Image/class%20view.jpg)
 
-Deskripsi: Kelas View bertanggung jawab untuk interaksi dengan pengguna, termasuk pengambilan input dan menampilkan output.
+Deskripsi: Class View bertanggung jawab untuk interaksi dengan pengguna, termasuk pengambilan input dan menampilkan output.
 
 Metode input_data:
 
@@ -36,15 +38,17 @@ Mengambil input dari pengguna untuk nama, NIM, dan nilai UAS.
 
 Menggunakan strip() untuk menghapus spasi di awal dan akhir input.
 
-Mengembalikan objek Data yang baru dibuat dengan informasi tersebut.
+Mengembalikan objek Data yang baru dibuat dengan informasi yang dimasukkan.
 
 Metode tampilkan_data:
 
-Menerima daftar objek Data dan menyiapkan data untuk ditampilkan dalam format tabel.
+Menerima daftar objek Data (data_list) dan menyiapkan data untuk ditampilkan dalam format tabel.
 
-Menambahkan header tabel dan setiap data mahasiswa ke dalam tabel_data.
+Membuat header tabel dengan kolom "No", "Nama", "NIM", dan "Nilai UAS".
 
-Memanggil fungsi tampilkan_tabel untuk menampilkan data.
+Menggunakan enumerate untuk menambahkan nomor urut pada setiap data.
+
+Memanggil fungsi tampilkan_tabel untuk menampilkan data dalam format tabel.
 
 - Fungsi " Tampilkan Table "
 
@@ -54,13 +58,29 @@ Deskripsi: Fungsi ini bertugas untuk menampilkan data dalam format tabel.
 
 Proses:
 
-Menghitung lebar kolom berdasarkan panjang data terpanjang di setiap kolom menggunakan zip(*data).
+Lebar Kolom: Menghitung lebar kolom berdasarkan panjang data terpanjang di setiap kolom menggunakan zip(*data) untuk mentransposisi data.
 
-Mencetak header tabel dan garis pemisah.
+Header Tabel: Mencetak header tabel dengan format yang sesuai dan garis pemisah.
 
-Mencetak setiap baris data dengan format yang sesuai, menggunakan lebar kolom yang telah ditentukan.
+Baris Tabel: Mencetak setiap baris data dengan format yang sesuai, menggunakan enumerate untuk mendapatkan indeks dan item.
 
 - Class " Process "
 
-![gambar]()
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/dcc49aba8a051f8459b3959fd85da8e8cfe64531/Image/class%20process.jpg)
+
+Deskripsi: Metode ini adalah statis, yang berarti dapat dipanggil tanpa harus membuat instance dari class Process. Ia menerima satu parameter, yaitu objek Data.
+
+Proses Validasi:
+
+Nama: Memeriksa apakah nama hanya terdiri dari huruf. Jika tidak, akan mengangkat ValueError dengan pesan yang sesuai.
+
+NIM: Memastikan bahwa NIM hanya berisi angka. Jika tidak, akan mengangkat ValueError.
+
+Nilai UAS: Memeriksa apakah nilai UAS adalah angka. Jika tidak, akan mengangkat ValueError.
+
+Konversi dan Rentang: Mengonversi nilai UAS dari string ke integer dan memeriksa apakah nilainya berada dalam rentang 0 hingga 100. Jika tidak, akan mengangkat ValueError.
+
+Penanganan Kesalahan: Jika terjadi kesalahan selama validasi, pesan kesalahan akan dicetak, dan metode akan mengembalikan False. Jika semua validasi berhasil, metode akan mengembalikan 
+
+True.
 

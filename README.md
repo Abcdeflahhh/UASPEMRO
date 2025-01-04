@@ -23,3 +23,29 @@ nim: Nomor Induk Mahasiswa.
 nilai_uas: Nilai Ujian Akhir Semester.
 
 Metode __init__: Ini adalah konstruktor yang dipanggil saat objek dari kelas ini dibuat. Ia menerima tiga parameter (nama, nim, dan nilai_uas) dan menyimpannya sebagai atribut objek.
+
+Class " View " 
+
+![gambar](https://github.com/Abcdeflahhh/UASPEMRO/blob/804b9c41bc554e0ff189d6b493c5b034950ff675/Image/class%20view.jpg)
+
+Deskripsi: Kelas View bertanggung jawab untuk interaksi dengan pengguna, termasuk pengambilan input dan menampilkan output.
+
+Metode input_data:
+
+Mengambil input dari pengguna untuk nama, NIM, dan nilai UAS.
+
+Menggunakan strip() untuk menghapus spasi di awal dan akhir input.
+
+Mengembalikan objek Data yang baru dibuat dengan informasi tersebut.
+
+Metode tampilkan_data:
+
+Menerima daftar objek Data dan menyiapkan data untuk ditampilkan dalam format tabel.
+
+Menambahkan header tabel dan setiap data mahasiswa ke dalam tabel_data.
+
+Memanggil fungsi tampilkan_tabel untuk menampilkan data.
+
+Fungsi " Tampilkan Table "
+
+
